@@ -1,0 +1,7 @@
+---
+- name: install tools
+  package:
+    name: "{{ item }}"
+  with_flattened:
+    - "{{ devops_packages }}"
+    - "{{ devops_pkgs[ansible_os_family] }}"

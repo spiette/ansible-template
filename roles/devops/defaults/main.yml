@@ -1,0 +1,19 @@
+---
+devops_packages:
+  - git
+  - vim
+  - mtr
+  - dstat
+  - rpm-build
+  - rubygems
+  - python-pip
+  - ansible
+  - bash-completion
+  - iftop
+  - iptraf
+  - make
+  - bundler
+  - fabric
+devops_pkgs:
+  RedHat:
+    - rpm-build

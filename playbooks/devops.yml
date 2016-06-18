@@ -1,0 +1,6 @@
+---
+- name: devops
+  hosts: devops
+  become: true
+  roles:
+      - devops
