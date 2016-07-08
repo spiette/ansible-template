@@ -1,0 +1,27 @@
+---
+- name: install tools
+  package:
+    name: "{{ item }}"
+  with_flattened:
+    - "{{ vagrant_packages }}"
+    - "{{ vagrant_pkgs[ansible_os_family] }}"
+  tags: vagrant
+
+- name: install vagrant-libvirt policykit rule
+  shell: >
+    install
+    -m 0644
+    --owner root
+    --group root
+    /usr/share/vagrant/gems/doc/vagrant-libvirt-*/polkit/10-vagrant-libvirt.rules
+    /etc/polkit-1/rules.d/
+  creates: /etc/polkit-1/rules.d/10-vagrant-libvirt.rules
+  tags: vagrant
+
+- name: add vagrant_users in vagrant group
+  user:
+    name: "{{ item }}"
+    append: true
+    groups: vagrant
+  with_items: "{{ vagrant_users }}"
+  tags: vagrant

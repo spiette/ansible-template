@@ -1,0 +1,11 @@
+---
+vagrant_packages:
+  - vagrant
+  - vagrant-libvirt
+  - vagrant-libvirt-doc
+  - vagrant-cachier
+  - vagrant-lxc
+  - vagrant-hostmanager
+vagrant_pkgs:
+  RedHat: []
+vagrant_users: []

@@ -4,3 +4,9 @@
   become: true
   roles:
       - devops
+
+- name: vagrant
+  hosts: vagrant
+  become: true
+  roles:
+      - vagrant
